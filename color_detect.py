@@ -3,9 +3,16 @@ from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 import cv2
 
-image = cv2.imread('images/image_3.jpg')
-image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-plt.imshow(image)
+
+image = 0
+
+def detect_colors(path):
+    image = cv2.imread(path)
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    plt.imshow(image)
+
+    modified_image = prep_image(image)
+    return color_analysis(modified_image)
 
 def rgb_to_hex(rgb_color):
     hex_color = "#"
@@ -30,6 +37,4 @@ def color_analysis(img):
     plt.pie(counts.values(), colors=hex_colors, labels=hex_colors)
     plt.savefig("images/color_analysis_report.png")
     print(hex_colors)
-
-modified_image = prep_image(image)
-color_analysis(modified_image)
+    return hex_colors
