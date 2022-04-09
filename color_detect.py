@@ -35,6 +35,6 @@ def color_analysis(img):
     hex_colors = [rgb_to_hex(ordered_colors[i]) for i in counts.keys()]
     plt.figure(figsize = (12, 8))
     plt.pie(counts.values(), colors=hex_colors, labels=hex_colors)
-    plt.savefig("images/color_analysis_report.png")
+    plt.savefig("assets/color_analysis_report.png")
     print(hex_colors)
     return hex_colors
