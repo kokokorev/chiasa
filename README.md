@@ -1,5 +1,0 @@
-# start server:
-
-```
-flask run
-```
