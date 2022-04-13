@@ -1,33 +1,36 @@
 from flask import Flask, request
+from matplotlib import image
 from rename_file_mock import get_random_string
+from detect import detect_color_v02 as dc
 
 app = Flask(__name__)
 
 
 @app.route('/upload')
 def upload_file() -> str:
-    """
-    method for send upload image form
+    """mthod for send upload image form
 
-    TODO: write image upload form
-
-    Returns: str(): temp string before i write image upload form
+    Returns:
+        str: temp string before i write image upload form
     """
     return 'upload image, please🙏'
 
 
 @app.route('/uploader', methods=['POST'])
 def uploader_file() -> str:
-    """
-    method fot upload and save image
+    """method fot upload and save image
 
-    TODO: write image uploader form
+    TODO:
+        write image uploader form
 
-    Returns: str(): temp string before i write image uploader form
+    Returns:
+        str: temp string before i write image uploader form
     """
     print(request.files)
-    file = request.files['image']
-    file.save(f'assets/{get_random_string()}.jpg')
+    image = request.files['image']
+    image_name = f'{get_random_string()}.jpg'
+    image_path = f'assets/{image_name}'
+    image.save(image_path)
     return 'thanks form your image🦄'
 
 
