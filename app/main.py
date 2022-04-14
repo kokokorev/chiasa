@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, send_file
 from matplotlib import image
 from rename_file_mock import get_random_string
 from detect import detect_color_v02 as dc
@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/upload')
 def upload_file() -> str:
-    """mthod for send upload image form
+    """method for send upload image form
 
     Returns:
         str: temp string before i write image upload form
@@ -26,11 +26,9 @@ def uploader_file() -> str:
     Returns:
         str: temp string before i write image uploader form
     """
-    print(request.files)
     image = request.files['image']
-    image_name = f'{get_random_string()}.jpg'
-    image_path = f'assets/{image_name}'
-    image.save(image_path)
+    image_name = f'{get_random_string()}.png'
+    image.save(f'app/resources/{image_name}')
     return 'thanks form your image🦄'
 
 
