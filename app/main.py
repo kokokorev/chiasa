@@ -1,7 +1,5 @@
-from flask import Flask, request, send_file
-from matplotlib import image
-from rename_file_mock import get_random_string
-from detect import detect_color_v02 as dc
+from flask import Flask, request
+from detect import detect_color as dc
 
 app = Flask(__name__)
 
@@ -27,8 +25,12 @@ def uploader_file() -> str:
         str: temp string before i write image uploader form
     """
     image = request.files['image']
-    image_name = f'{get_random_string()}.png'
-    image.save(f'app/resources/{image_name}')
+    image_hex_colors: list = dc.get_hex_colors(
+        image=dc.convert_image(image),
+        number_of_colors=5
+    )
+    image_name = ''.join(image_hex_colors)
+    image.save(f'app/resources/{image_name}.jpg')
     return 'thanks form your image🦄'
 
 
