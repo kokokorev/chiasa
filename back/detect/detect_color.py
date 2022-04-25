@@ -8,23 +8,7 @@ import numpy as np
 import io
 
 
-def convert_image(image_from_request: FileStorage) -> ndarray:
-    """convert file storage image form request to nparray
-
-    Args:
-        image_from_request (FileStorage): image from request
-
-    Returns:
-        ndarray: image
-    """
-    in_memory_file = io.BytesIO()
-    image_from_request.save(in_memory_file)
-    data = np.fromstring(in_memory_file.getvalue(), dtype=np.uint8)
-    image = cv2.imdecode(data, 1)
-    return cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-
-
-def get_hex_colors(image: ndarray, number_of_colors: int) -> list:
+def get_hex_colors(image_path: str, number_of_colors: int) -> list:
     """get hex colors from image with computer vision
 
     Args:
@@ -34,6 +18,8 @@ def get_hex_colors(image: ndarray, number_of_colors: int) -> list:
     Returns:
         list: hex colors list
     """
+    image = cv2.imread(image_path)
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     # resize image to precess fewer pixels
     modified_image = cv2.resize(src=image, 
                                 dsize=(600, 400), 
