@@ -1,0 +1,24 @@
+.color-grid__caption {
+    color: #ffffff;
+    font-family: 'JetBrainsMono', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 500;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: auto;
+    padding-bottom: 2px;
+}
+
+@media (max-width: 768px) {
+    .uloaded-image__caption {
+        margin-left: 24px;
+    }
+} 
+
+@media (max-width: 320px) {
+    .uloaded-image__caption {
+        margin-left: 16px;
+    }
+} 
