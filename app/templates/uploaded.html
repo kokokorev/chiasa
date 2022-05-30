@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uploaded image</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='pages/uploaded.css') }}">
+</head>
+
+<body>
+    <div class="page">
+        <header class="header page__header">
+            <div class="header__button">
+                <a href="{{ url_for('index') }}" target="_self" class="header__button-link">&#10229; chiasa</a>
+            </div>
+        </header>
+
+        <main class="content">
+            <section class="uloaded-image content__section">
+                <p class="uloaded-image__caption">uploaded image</p>
+                <img src="../static/images/uploaded/{{ image_path }}" class="uloaded-image__image" alt="Загруженное изображение">
+            </section>
+
+            <section class="color-grid content__section">
+                <ul class="color-grid__items">
+                    <li>
+                        <p class="color-grid__caption">{{ first_color }}</p>
+                        <div class="color-grid__item image-grid__item_first" style="background-color: {{ first_color }};"></div>
+                    </li>
+                    <li>
+                        <p class="color-grid__caption">{{ second_color }}</p>
+                        <div class="color-grid__item image-grid__item_second" style="background-color: {{ second_color }};"></div>
+                    </li>
+                    <li>
+                        <p class="color-grid__caption">{{ third_color }}</p>
+                        <div class="color-grid__item image-grid__item_third" style="background-color: {{ third_color }};"></div>
+                    </li>
+                    <li>
+                        <p class="color-grid__caption">{{ fourth_color }}</p>
+                        <div class="color-grid__item image-grid__item_fourth" style="background-color: {{ fourth_color }};"></div>
+                    </li>
+                    <li>
+                        <p class="color-grid__caption">{{ fifth_color }}</p>
+                        <div class="color-grid__item image-grid__item_fifth" style="background-color: {{ fifth_color }};"></div>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="footer page__footer">
+        </footer>
+    </div>
+</body>
+
+</html>

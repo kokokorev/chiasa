@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 import cv2
 from collections import Counter
 import numpy as np
-import io
+from detect.color import rgb_to_hsl
 
 
-def get_hex_colors(image_path: str, number_of_colors: int) -> list:
+def get_hsl_colors(image_path: str, number_of_colors: int) -> list:
     """get hex colors from image with computer vision
 
     Args:
@@ -34,11 +34,14 @@ def get_hex_colors(image_path: str, number_of_colors: int) -> list:
     
     # get ordered colors by iterating through the keys
     ordered_colors = [center_colors[i] for i in counts.keys()]
-    # convert rgn array to hex colors
-    hex_colors = [rgb_to_hex(ordered_colors[i]) for i in counts.keys()]
+    
+    # get rgb colors
+    rgb_colors = [ordered_colors[i] for i in counts.keys()]
+    
+    # get hsl colors from rgb
+    hsl_colors = [rgb_to_hsl(rgb_color=rgb_color) for rgb_color in rgb_colors]
     
     # print colors to console for debug
-    rgb_colors = [ordered_colors[i] for i in counts.keys()]
     for i in rgb_colors:
         print(
             get_color_for_console(
@@ -49,19 +52,7 @@ def get_hex_colors(image_path: str, number_of_colors: int) -> list:
             + '       ' 
             + '\033[0m') 
     
-    return hex_colors
-
-
-def rgb_to_hex(color: ndarray) -> str:
-    """convert rgb (ndarray) to hex color code
-
-    Args:
-        color (ndarray): rgb color
-
-    Returns:
-        str: hex code
-    """
-    return "#{:02x}{:02x}{:02x}".format(int(color[0]), int(color[1]), int(color[2]))
+    return hsl_colors
 
 
 def get_color_for_console(r: int, g: int, b: int, background=False) -> str:

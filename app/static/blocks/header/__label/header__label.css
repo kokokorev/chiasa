@@ -1,0 +1,33 @@
+.header__label {
+    font-family: 'JetBrainsMono', Arial, Helvetica, sans-serif;
+    border: none;
+    display: inline-block;
+    padding: 0;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+    transition: opacity 0.3s linear;
+    width: 201px;
+}
+
+.header__label:hover {
+    opacity: 80%;
+  }
+
+input[type="file"] {
+    display: none;
+}
+
+input[type=submit] {
+    padding: 0; 
+    background:#000; 
+    border: 0 none;
+    cursor:pointer;
+    color: white;
+    font-family: 'JetBrainsMono', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+}
