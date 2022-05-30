@@ -1,0 +1,7 @@
+.image-grid__items {
+    grid-column-gap: 20px;
+    align-items: start;
+    display: grid;
+    grid-template-columns: repeat(3 ,minmax(0,1fr));
+    padding: 0;
+}
