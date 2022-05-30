@@ -1,0 +1,21 @@
+.footer__copyright {
+    font-family: 'JetBrainsMono', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: right;
+    color: #FFFFFF;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+@media (max-width: 650px) {
+    .footer__copyright {
+        line-height: 14px;
+        padding-top: 48px;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+} 

@@ -1,0 +1,10 @@
+.image-grid {
+    max-width: 1120px;
+    padding: 155px 0 0;
+}
+
+@media (max-width: 320px) {
+    .color-grid {
+        max-width: 288px;
+    }
+} 
