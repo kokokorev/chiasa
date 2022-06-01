@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/images/favicon.png" type="image/png">
+    <title>chiasa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='pages/index.css') }}">
+</head>
+
+<body>
+    <div class="page">
+        <header class="header page__header">
+            <form method="POST" action="{{ url_for('upload') }}" method="POST" class="header__button" enctype="multipart/form-data">
+                <a href="#" target="_self" class="header__button-link">chiasa</a>
+                <label class="header__label">
+                    <input type="file" name="image"/>
+                    browse image
+                </label>
+                <input type="submit" value="upload image &#10230;"/>
+            </form>
+        </header>
+
+        <main class="content">
+            <section class="color-wheel content__section">
+                <div id="central-circle" class="container">
+                    <a href="{{ url_for('select_color', selected_color='yellow') }}" target="_self" class="one" title="yellow"></a>
+                    <a href="{{ url_for('select_color', selected_color='yellow-orange') }}" target="_self" class="two" title="yellow-orange"></a>
+                    <a href="{{ url_for('select_color', selected_color='orange') }}" target="_self" class="three" title="orange"></a>
+                    <a href="{{ url_for('select_color', selected_color='red-orange') }}" target="_self" class="four" title="red-orange"></a>
+                    <a href="{{ url_for('select_color', selected_color='red') }}" target="_self" class="five" title="red"></a>
+                    <a href="{{ url_for('select_color', selected_color='red-purple') }}" target="_self" class="six" title="red-purple"></a>
+                    <a href="{{ url_for('select_color', selected_color='purple') }}" target="_self" class="seven" title="purple"></a>
+                    <a href="{{ url_for('select_color', selected_color='blue-purple') }}" target="_self" class="eight" title="blue-purple"></a>
+                    <a href="{{ url_for('select_color', selected_color='blue') }}" target="_self" class="nine" title="blue"></a>
+                    <a href="{{ url_for('select_color', selected_color='blue-green') }}" target="_self" class="ten" title="blue-green"></a>
+                    <a href="{{ url_for('select_color', selected_color='green') }}" target="_self" class="eleven" title="green"></a>
+                    <a href="{{ url_for('select_color', selected_color='yellow-green') }}" target="_self" class="twelve" title="yellow-green"></a>
+                </div>
+            </section>
+
+            <section class="image-grid content__section">
+                <div class="image-grid__items">
+                    <div class="image-grid__column image-grid__column_first">
+                        {% for image in first_column %}
+                        <a href="/uploaded/{{ image }}"><img src="../static/images/uploaded/{{ image }}" class="image-grid__item" alt="{{ image }}"></a>
+                        {% endfor %}
+                    </div>
+                    <div class="image-grid__column image-grid__column_second">
+                        {% for image in second_column %}
+                        <a href="/uploaded/{{ image }}"><img src="../static/images/uploaded/{{ image }}" class="image-grid__item" alt="{{ image }}"></a>
+                        {% endfor %}
+                    </div>
+                    <div class="image-grid__column image-grid__column_third">
+                        {% for image in third_column %}
+                        <a href="/uploaded/{{ image }}"><img src="../static/images/uploaded/{{ image }}" class="image-grid__item" alt="{{ image }}"></a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer page__footer">
+            <!--  <p class="footer__copyright">© 2022. Тимур Кокорев</p> -->
+        </footer>
+    </div>
+</body>
+
+</html>
