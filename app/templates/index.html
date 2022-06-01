@@ -24,33 +24,37 @@
         <main class="content">
             <section class="color-wheel content__section">
                 <div id="central-circle" class="container">
-                    <button class="one"></button>
-                    <button class="two"></button>
-                    <button class="three"></button>
-                    <button class="four"></button>
-                    <button class="five"></button>
-                    <button class="six"></button>
-                    <button class="seven"></button>
-                    <button class="eight"></button>
-                    <button class="nine"></button>
-                    <button class="ten"></button>
-                    <button class="eleven"></button>
-                    <button class="twelve"></button>
+                    <a href="{{ url_for('select_color', selected_color='yellow') }}" target="_self" class="one" title="yellow"></a>
+                    <a href="{{ url_for('select_color', selected_color='yellow-orange') }}" target="_self" class="two" title="yellow-orange"></a>
+                    <a href="{{ url_for('select_color', selected_color='orange') }}" target="_self" class="three" title="orange"></a>
+                    <a href="{{ url_for('select_color', selected_color='red-orange') }}" target="_self" class="four" title="red-orange"></a>
+                    <a href="{{ url_for('select_color', selected_color='red') }}" target="_self" class="five" title="red"></a>
+                    <a href="{{ url_for('select_color', selected_color='red-purple') }}" target="_self" class="six" title="red-purple"></a>
+                    <a href="{{ url_for('select_color', selected_color='purple') }}" target="_self" class="seven" title="purple"></a>
+                    <a href="{{ url_for('select_color', selected_color='blue-purple') }}" target="_self" class="eight" title="blue-purple"></a>
+                    <a href="{{ url_for('select_color', selected_color='blue') }}" target="_self" class="nine" title="blue"></a>
+                    <a href="{{ url_for('select_color', selected_color='blue-green') }}" target="_self" class="ten" title="blue-green"></a>
+                    <a href="{{ url_for('select_color', selected_color='green') }}" target="_self" class="eleven" title="green"></a>
+                    <a href="{{ url_for('select_color', selected_color='yellow-green') }}" target="_self" class="twelve" title="yellow-green"></a>
                 </div>
             </section>
 
             <section class="image-grid content__section">
                 <div class="image-grid__items">
                     <div class="image-grid__column image-grid__column_first">
-                        <img src="static/images/image-grid-first.jpg" class="image-grid__item" alt="Первая картинка">
-                        <img src="static/images/image-grid-second.jpg" class="image-grid__item" alt="Вторая картинка">
+                        {% for image in first_column %}
+                        <a href="/uploaded/{{ image }}"><img src="../static/images/uploaded/{{ image }}" class="image-grid__item" alt="{{ image }}"></a>
+                        {% endfor %}
                     </div>
                     <div class="image-grid__column image-grid__column_second">
-                        <img src="static/images/image-grid-third.jpg" class="image-grid__item" alt="Третья картинка">
+                        {% for image in second_column %}
+                        <a href="/uploaded/{{ image }}"><img src="../static/images/uploaded/{{ image }}" class="image-grid__item" alt="{{ image }}"></a>
+                        {% endfor %}
                     </div>
                     <div class="image-grid__column image-grid__column_third">
-                        <img src="static/images/image-grid-fourth.jpg" class="image-grid__item" alt="Четвертая картинка">
-                        <img src="static/images/image-grid-fifth.jpg" class="image-grid__item" alt="Пятая картинка">
+                        {% for image in third_column %}
+                        <a href="/uploaded/{{ image }}"><img src="../static/images/uploaded/{{ image }}" class="image-grid__item" alt="{{ image }}"></a>
+                        {% endfor %}
                     </div>
                 </div>
             </section>

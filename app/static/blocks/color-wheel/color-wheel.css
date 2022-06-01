@@ -1,111 +1,129 @@
 .color-wheel {
-	display:flex;
-	align-items:center;
-	justify-content: center;
-    padding: 76px 0 0;
-}
-
-.container {
-    width: 300px;
-    height: 300px;
-    background-color: #000000;
-    border-radius: 50%;
-    position: relative;
-    overflow: hidden;
-    transition: 5s;
-}
-
-.container button {
-	height: 50%;
-    width: 79px;
-    position: absolute;
-    clip-path: polygon(103% 0, 50% 100% , 0 0 );
-    transform: translateX(-50%);
-    transform-origin: bottom;
-    text-align: center;
-    display: flex;
-    align-items: center;
+    display:flex;
+    align-items:center;
     justify-content: center;
-    left: 111px;
-    cursor: pointer;
-    padding: 0;
-    border: 0;
-    transition: opacity 0.3s linear;
-}
-
-.container button:hover {
-    opacity: 50%;
-}
-
-.container .one{
-	background-color: #F3E401;
-	transform: rotate(0deg);
-}
-
-.container .two{
-	background-color: #FCC40B;
-	transform: rotate(30deg);
-}
-
-.container .three{
-	background-color: #F18D1D;
-	transform:rotate(60deg);
-}
-
-.container .four{
-	background-color: #E96220;
-	transform: rotate(90deg);
-}
-
-.container .five{
-	background-color: #E32322;
-	transform: rotate(120deg);
-}
-
-.container .six{
-	background-color: #C3037C;
-	transform: rotate(150deg);
-}
-
-.container .seven{
-	background-color: #6D398B;
-	transform: rotate(180deg);
-}
-
-.container .eight{
-	background-color: #454E99;
-	transform: rotate(210deg);
-}
-
-.container .nine{
-	background-color: #2B71AF;
-	transform: rotate(240deg);
-}
-
-.container .ten{
-	background-color: #0795BB;
-	transform: rotate(270deg);
-}
-
-.container .eleven{
-	background-color: #008C5B;
-	transform: rotate(300deg);
-}
-
-.container .twelve{
-	background-color: #8CBA26;
-	transform: rotate(330deg);
-}
-
-#central-circle:after {
-    content: "";
-    width: 116px;
-    height: 116px;
-    overflow: hidden;
-    position: absolute;
-    top:50%;
-	left:50%;
-	transform:translate(-50%,-50%);
-    border-radius: 100%;
-    background: #000000;
-}
+      padding: 76px 0 0;
+  }
+  
+  .container {
+      width: 400px;
+      height: 400px;
+      background-color: #000000;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+      transition: 5s;
+  }
+  
+  .container a {
+    height: 50%;
+      width: 133px;
+      position: absolute;
+      clip-path: polygon(81% 0, 50% 100% , 0 0 );
+      transform: translateX(-50%);
+      transform-origin: bottom;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      left: 134px;
+      cursor: pointer;
+      padding: 0;
+      border: 0;
+      transition: opacity 0.3s linear;
+  }
+  
+  .container a:hover {
+      opacity: 50%;
+  }
+  
+  .container .one{
+    background-color: #F3E401;
+    transform: rotate(0deg);
+  }
+  
+  .container .two{
+    background-color: #FCC40B;
+    transform: rotate(30deg);
+  }
+  
+  .container .three{
+    background-color: #F18D1D;
+    transform:rotate(60deg);
+  }
+  
+  .container .four{
+    background-color: #E96220;
+    transform: rotate(90deg);
+  }
+  
+  .container .five{
+    background-color: #E32322;
+    transform: rotate(120deg);
+  }
+  
+  .container .six{
+    background-color: #C3037C;
+    transform: rotate(150deg);
+  }
+  
+  .container .seven{
+    background-color: #6D398B;
+    transform: rotate(180deg);
+  }
+  
+  .container .eight{
+    background-color: #454E99;
+    transform: rotate(210deg);
+  }
+  
+  .container .nine{
+    background-color: #2B71AF;
+    transform: rotate(240deg);
+  }
+  
+  .container .ten{
+    background-color: #0795BB;
+    transform: rotate(270deg);
+  }
+  
+  .container .eleven{
+    background-color: #008C5B;
+    transform: rotate(300deg);
+  }
+  
+  .container .twelve{
+    background-color: #8CBA26;
+    transform: rotate(330deg);
+  }
+  
+  #central-circle:after {
+      content: "";
+      width: 216px;
+      height: 216px;
+      overflow: hidden;
+      position: absolute;
+      top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+      border-radius: 100%;
+      background: #000000;
+  }
+  
+  @media (max-width: 500px) {
+      .container {
+          width: 300px;
+          height: 300px;
+      }
+  
+      .container a {
+          width: 79px;
+          clip-path: polygon(103% 0, 50% 100% , 0 0 );
+          left: 111px;
+      }
+  
+      #central-circle:after {
+          width: 116px;
+          height: 116px;
+      }
+  }

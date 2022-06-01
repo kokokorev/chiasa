@@ -14,4 +14,28 @@
         max-width: 288px;
         padding: 64px 16px 0;
     }
-} 
+}
+
+.color-grid_harmonic {
+    margin-top: 40px;
+}
+
+.color-grid__caption {
+    margin-top: 10px;
+    color: #ffffff;
+    font-family: 'JetBrainsMono', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 500;
+    margin-left: 0;
+    margin-bottom: 0;
+    margin-right: auto;
+}
+
+.color-grid__items_harmonic {
+    margin-top: 10px;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 0;
+}
